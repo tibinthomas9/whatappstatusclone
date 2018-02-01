@@ -100,6 +100,7 @@
 				11D0347D2022F52C006194F8 /* AppDelegate.swift */,
 				11D0347F2022F52C006194F8 /* ViewController.swift */,
 				11D034812022F52C006194F8 /* Main.storyboard */,
+				11D034AD202322C6006194F8 /* ViewController */,
 				11D034842022F52C006194F8 /* Assets.xcassets */,
 				11D034862022F52C006194F8 /* LaunchScreen.storyboard */,
 				11D034892022F52C006194F8 /* Info.plist */,
@@ -123,6 +124,13 @@
 				11D0349F2022F52C006194F8 /* Info.plist */,
 			);
 			path = whatappstatuscloneUITests;
+			sourceTree = "<group>";
+		};
+		11D034AD202322C6006194F8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
