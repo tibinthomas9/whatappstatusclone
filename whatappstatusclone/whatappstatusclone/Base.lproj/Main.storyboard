@@ -122,6 +122,7 @@
                                     <constraint firstItem="EWQ-Ap-S3c" firstAttribute="leading" secondItem="tfP-wM-bmE" secondAttribute="leading" id="qOg-db-VlM"/>
                                     <constraint firstItem="zdx-VP-zmv" firstAttribute="height" secondItem="tfP-wM-bmE" secondAttribute="height" multiplier="100:667" id="vcT-J8-QI8"/>
                                     <constraint firstItem="b6N-cs-GJ8" firstAttribute="leading" secondItem="tfP-wM-bmE" secondAttribute="leading" id="wmN-O9-t2P"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="zdx-VP-zmv" secondAttribute="bottom" id="xyC-M4-azj"/>
                                 </constraints>
                             </view>
                         </subviews>
