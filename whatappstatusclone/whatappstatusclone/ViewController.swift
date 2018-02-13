@@ -16,17 +16,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var draggerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var draggerBottom: NSLayoutConstraint!
+    @IBOutlet weak var heightTable: NSLayoutConstraint!
     var lastLocation: CGFloat = 0
-    
+    var tableViewHeight: CGFloat {
+        tableView.layoutIfNeeded()
+        return tableView.contentSize.height
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = "Tibin"
         details.text = "ended"
+        headerImgView.image = UIImage(named: "whatsappbomb")
+        headerImgView.round(withBorder: true)
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
+        if (tableViewHeight <= (-getHeight() - 40))
+        {
+            heightTable.constant = tableViewHeight
+        }
+        else{
+            heightTable.constant = (-getHeight() - 40)
+        }
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       // heightTable.constant = tableViewHeight <= (getHeight() - 40)  ? tableViewHeight : (getHeight() - 40)
+
+        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lastLocation = draggerBottom.constant
@@ -53,19 +75,35 @@ class ViewController: UIViewController {
                     self.draggerBottom.constant = 0
                 })
             } else {
-                if #available(iOS 11.0, *) {
-                    let guide = view.safeAreaLayoutGuide
                     UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.draggerBottom.constant = -(guide.layoutFrame.height - self.headerImgView.frame.height) + 100
+                        self.draggerBottom.constant = self.getHeight()
                                         })
-                } else {
-                    // Fallback on earlier versions
-                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.draggerBottom.constant = -(self.view.frame.height - self.headerImgView.frame.height) + 100
-                    })
                 }
 
             }
+        }
+    
+    
+func getHeight() ->  CGFloat{
+    if #available(iOS 11.0, *) {
+        let guide = view.safeAreaLayoutGuide
+            return -(guide.layoutFrame.height - self.headerImgView.frame.height) + 100
+        
+    } else {
+        // Fallback on earlier versions
+            return  -(self.view.frame.height - self.headerImgView.frame.height) + 100
+    }
+    
+}
+}
+//MARK:- Helpers
+extension UIView{
+    func round(withBorder:Bool = false){
+        clipsToBounds = true
+        layer.cornerRadius = self.frame.height/2
+        if (withBorder){
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.black.cgColor
         }
     }
     

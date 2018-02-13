@@ -14,6 +14,8 @@
 		11D034882022F52C006194F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D034862022F52C006194F8 /* LaunchScreen.storyboard */; };
 		11D034932022F52C006194F8 /* whatappstatuscloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D034922022F52C006194F8 /* whatappstatuscloneTests.swift */; };
 		11D0349E2022F52C006194F8 /* whatappstatuscloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0349D2022F52C006194F8 /* whatappstatuscloneUITests.swift */; };
+		11DA2BE720331D140066DC27 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA2BE620331D140066DC27 /* HeaderTableViewCell.swift */; };
+		11DA2BE920331E8A0066DC27 /* ViewConrellerTableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA2BE820331E8A0066DC27 /* ViewConrellerTableExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		11D034992022F52C006194F8 /* whatappstatuscloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whatappstatuscloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D0349D2022F52C006194F8 /* whatappstatuscloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whatappstatuscloneUITests.swift; sourceTree = "<group>"; };
 		11D0349F2022F52C006194F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11DA2BE620331D140066DC27 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		11DA2BE820331E8A0066DC27 /* ViewConrellerTableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConrellerTableExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				11D0347D2022F52C006194F8 /* AppDelegate.swift */,
 				11D0347F2022F52C006194F8 /* ViewController.swift */,
+				11DA2BE820331E8A0066DC27 /* ViewConrellerTableExtension.swift */,
+				11DA2BE620331D140066DC27 /* HeaderTableViewCell.swift */,
 				11D034812022F52C006194F8 /* Main.storyboard */,
 				11D034AD202322C6006194F8 /* ViewController */,
 				11D034842022F52C006194F8 /* Assets.xcassets */,
@@ -268,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D034802022F52C006194F8 /* ViewController.swift in Sources */,
+				11DA2BE720331D140066DC27 /* HeaderTableViewCell.swift in Sources */,
+				11DA2BE920331E8A0066DC27 /* ViewConrellerTableExtension.swift in Sources */,
 				11D0347E2022F52C006194F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
