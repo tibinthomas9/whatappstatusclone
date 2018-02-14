@@ -17,7 +17,7 @@ extension ViewController: UITableViewDataSource{
         return 50
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "HeaderDefault")
         cell.detailTextLabel?.text = "hai"
         cell.textLabel?.text = "Hell\(indexPath.row)"
         cell.imageView?.image = UIImage(named: "whatsappbomb")

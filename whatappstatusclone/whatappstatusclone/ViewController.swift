@@ -34,6 +34,9 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    updateTableHeight()
+    }
+    func updateTableHeight(){
         if (tableViewHeight <= (-getMaxDraggerBottom() - 80))
         {
             heightTable.constant = tableViewHeight
@@ -63,6 +66,8 @@ class ViewController: UIViewController {
         let translation = sender.translation(in: view)
         let velocity = sender.velocity(in: view)
         draggerBottom.constant = lastLocation + translation.y
+        draggerView.alpha =  (getMaxDraggerBottom() - draggerBottom.constant) / getMaxDraggerBottom()
+
         if sender.state == UIGestureRecognizerState.began {
             
         } else if sender.state == UIGestureRecognizerState.changed {
@@ -73,10 +78,12 @@ class ViewController: UIViewController {
             if velocity.y > 0 {
                 UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     self.draggerBottom.constant = 0
+                    self.draggerView.alpha = 1
                 })
             } else {
                     UIView.animate(withDuration: 0.3, animations: { () -> Void in
                         self.draggerBottom.constant = self.getMaxDraggerBottom()
+                        self.draggerView.alpha = 0
                                         })
                 }
 

@@ -29,10 +29,10 @@
                                         <gestureRecognizers/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-cs-GJ8" userLabel="header">
-                                        <rect key="frame" x="0.0" y="3.9999999999999964" width="375" height="60.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="4" width="375" height="55"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-qT-IVa">
-                                                <rect key="frame" x="4.9999999999999964" y="-0.3333333333333357" width="60.666666666666657" height="60.666666666666664"/>
+                                                <rect key="frame" x="5" y="-0.3333333333333357" width="55" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="SB3-qT-IVa" secondAttribute="height" multiplier="1:1" id="Hnx-8K-Cqg"/>
                                                 </constraints>
@@ -44,16 +44,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-8p-pGb">
-                                                <rect key="frame" x="75.666666666666671" y="5.6666666666666643" width="41.666666666666671" height="48.333333333333336"/>
+                                                <rect key="frame" x="70" y="5" width="41.666666666666657" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iM-Ly-b5f">
-                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="23.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzC-D8-LIT">
-                                                        <rect key="frame" x="0.0" y="25.333333333333336" width="41.666666666666664" height="23"/>
+                                                        <rect key="frame" x="0.0" y="23" width="41.666666666666664" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -62,6 +62,7 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="UIX-8p-pGb" firstAttribute="leading" secondItem="SB3-qT-IVa" secondAttribute="trailing" constant="10" id="5gD-lJ-77i"/>
                                             <constraint firstItem="SB3-qT-IVa" firstAttribute="height" secondItem="b6N-cs-GJ8" secondAttribute="height" multiplier="1:1" id="98Q-E9-KIn"/>
@@ -73,11 +74,11 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-VP-zmv" userLabel="content">
-                                        <rect key="frame" x="0.0" y="734" width="375" height="190"/>
+                                        <rect key="frame" x="0.0" y="734.66666666666663" width="375" height="190"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGv-jc-uUG" userLabel="header">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.64296786510000004" green="0.72336632010000002" blue="0.19290210390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Nlv-dw-vw0"/>
                                                 </constraints>
@@ -169,7 +170,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-Ap-S3c" userLabel="Dragger">
-                                        <rect key="frame" x="0.0" y="689" width="375" height="44.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="689.66666666666663" width="375" height="44.333333333333371"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -187,7 +188,7 @@
                                     <constraint firstAttribute="trailing" secondItem="EWQ-Ap-S3c" secondAttribute="trailing" id="TiK-GX-BiM"/>
                                     <constraint firstAttribute="trailing" secondItem="zdx-VP-zmv" secondAttribute="trailing" id="Wic-6f-U3T"/>
                                     <constraint firstItem="EWQ-Ap-S3c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="b6N-cs-GJ8" secondAttribute="bottom" constant="100" id="cSf-z0-iOP"/>
-                                    <constraint firstItem="b6N-cs-GJ8" firstAttribute="height" secondItem="tfP-wM-bmE" secondAttribute="height" multiplier="55:667" id="dpr-Qe-pfc"/>
+                                    <constraint firstItem="b6N-cs-GJ8" firstAttribute="height" secondItem="tfP-wM-bmE" secondAttribute="height" multiplier="50:667" id="dpr-Qe-pfc"/>
                                     <constraint firstItem="elX-3J-wBU" firstAttribute="leading" secondItem="tfP-wM-bmE" secondAttribute="leading" id="fdd-UE-xxj"/>
                                     <constraint firstAttribute="trailing" secondItem="elX-3J-wBU" secondAttribute="trailing" id="pnF-Le-tVd"/>
                                     <constraint firstItem="EWQ-Ap-S3c" firstAttribute="leading" secondItem="tfP-wM-bmE" secondAttribute="leading" id="qOg-db-VlM"/>
@@ -228,7 +229,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.80000000000001" y="133.58320839580207"/>
         </scene>
     </scenes>
     <resources>
