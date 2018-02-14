@@ -73,12 +73,38 @@
                                             <constraint firstItem="UIX-8p-pGb" firstAttribute="height" secondItem="SB3-qT-IVa" secondAttribute="height" multiplier="0.8" id="yWi-fi-fOW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-VP-zmv" userLabel="content">
-                                        <rect key="frame" x="0.0" y="734.66666666666663" width="375" height="190"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-Ap-S3c" userLabel="Dragger">
+                                        <rect key="frame" x="0.0" y="689" width="375" height="44.333333333333371"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3z-uk-NDg">
+                                                <rect key="frame" x="183" y="0.0" width="9.6666666666666572" height="17.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-BA-5ta">
+                                                <rect key="frame" x="176.33333333333334" y="17.666666666666629" width="23" height="26.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="DaF-BA-5ta" firstAttribute="top" secondItem="k3z-uk-NDg" secondAttribute="bottom" id="QGG-2f-KpC"/>
+                                            <constraint firstItem="k3z-uk-NDg" firstAttribute="top" secondItem="EWQ-Ap-S3c" secondAttribute="top" id="QLq-Cw-WqR"/>
+                                            <constraint firstItem="k3z-uk-NDg" firstAttribute="centerX" secondItem="EWQ-Ap-S3c" secondAttribute="centerX" id="TQb-Qj-fdg"/>
+                                            <constraint firstItem="DaF-BA-5ta" firstAttribute="centerX" secondItem="k3z-uk-NDg" secondAttribute="centerX" id="VmQ-y3-4TD"/>
+                                            <constraint firstItem="DaF-BA-5ta" firstAttribute="height" secondItem="EWQ-Ap-S3c" secondAttribute="height" multiplier="0.6" id="fHW-RX-jmU"/>
+                                            <constraint firstAttribute="bottom" secondItem="DaF-BA-5ta" secondAttribute="bottom" id="re6-x5-LoK"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-VP-zmv" userLabel="content">
+                                        <rect key="frame" x="0.0" y="733.33333333333337" width="375" height="190"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGv-jc-uUG" userLabel="header">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                                                <color key="backgroundColor" red="0.64296786510000004" green="0.72336632010000002" blue="0.19290210390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Nlv-dw-vw0"/>
                                                 </constraints>
@@ -169,10 +195,6 @@
                                             <constraint firstItem="YGv-jc-uUG" firstAttribute="leading" secondItem="zdx-VP-zmv" secondAttribute="leading" id="y7X-pM-VaT"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-Ap-S3c" userLabel="Dragger">
-                                        <rect key="frame" x="0.0" y="689.66666666666663" width="375" height="44.333333333333371"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26263351169999999" green="1" blue="0.20239845379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -212,8 +234,11 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="contentHeader" destination="YGv-jc-uUG" id="fk6-It-Xde"/>
+                        <outlet property="contentView" destination="zdx-VP-zmv" id="4Gf-7O-aPb"/>
                         <outlet property="details" destination="tzC-D8-LIT" id="1aO-N1-yhR"/>
                         <outlet property="draggerBottom" destination="Dtf-gl-ys4" id="wdn-K0-bi3"/>
+                        <outlet property="draggerDetail" destination="DaF-BA-5ta" id="NlA-l7-Qum"/>
                         <outlet property="draggerView" destination="EWQ-Ap-S3c" id="BJL-Cv-gUY"/>
                         <outlet property="headerImgView" destination="SB3-qT-IVa" id="A0m-wh-WKm"/>
                         <outlet property="heightTable" destination="FbH-Bn-Lgj" id="x9Q-bW-h9j"/>

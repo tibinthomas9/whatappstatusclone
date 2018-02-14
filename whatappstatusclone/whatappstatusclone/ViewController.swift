@@ -14,10 +14,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var draggerView: UIView!
+    @IBOutlet weak var draggerDetail: UILabel!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentHeader: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var draggerBottom: NSLayoutConstraint!
     @IBOutlet weak var heightTable: NSLayoutConstraint!
+    var viewCount:Int = 0{
+        didSet{
+            draggerDetail.text = "\(viewCount)"
+            tableView.reloadData()
+        }
+    }
     var lastLocation: CGFloat = 0
+    var draggerBottomConstant:CGFloat = 0{
+        didSet{
+         draggerBottom.constant = draggerBottomConstant
+            if   draggerBottomConstant < -39{
+                if (contentView.alpha != 1){
+                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                    self.contentView.alpha = 1
+                }, completion: nil)
+                }
+            }
+            else{
+                contentView.alpha = 0
+        //  contentView.alpha =  draggerBottomConstant < -39 ? 1 : 0
+            }
+        }
+    }
     var tableViewHeight: CGFloat {
         tableView.layoutIfNeeded()
         return tableView.contentSize.height
@@ -34,9 +59,10 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    updateTableHeight()
+    updateTable()
     }
-    func updateTableHeight(){
+    func updateTable(){
+        viewCount = 50
         if (tableViewHeight <= (-getMaxDraggerBottom() - 80))
         {
             heightTable.constant = tableViewHeight
@@ -65,8 +91,9 @@ class ViewController: UIViewController {
     @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         let velocity = sender.velocity(in: view)
-        draggerBottom.constant = lastLocation + translation.y
+        draggerBottomConstant = lastLocation + translation.y
         draggerView.alpha =  (getMaxDraggerBottom() - draggerBottom.constant) / getMaxDraggerBottom()
+        
 
         if sender.state == UIGestureRecognizerState.began {
             
@@ -77,12 +104,12 @@ class ViewController: UIViewController {
             
             if velocity.y > 0 {
                 UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                    self.draggerBottom.constant = 0
+                    self.draggerBottomConstant = 0
                     self.draggerView.alpha = 1
                 })
             } else {
                     UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.draggerBottom.constant = self.getMaxDraggerBottom()
+                        self.draggerBottomConstant = self.getMaxDraggerBottom()
                         self.draggerView.alpha = 0
                                         })
                 }
