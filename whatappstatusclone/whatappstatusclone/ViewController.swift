@@ -34,19 +34,19 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-        if (tableViewHeight <= (-getHeight() - 40))
+        if (tableViewHeight <= (-getMaxDraggerBottom() - 80))
         {
             heightTable.constant = tableViewHeight
         }
         else{
-            heightTable.constant = (-getHeight() - 40)
+            heightTable.constant = (-getMaxDraggerBottom() - 80)
         }
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // heightTable.constant = tableViewHeight <= (getHeight() - 40)  ? tableViewHeight : (getHeight() - 40)
+       // heightTable.constant = tableViewHeight <= (getMaxDraggerBottom() - 40)  ? tableViewHeight : (getMaxDraggerBottom() - 40)
 
         
     }
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
                 })
             } else {
                     UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.draggerBottom.constant = self.getHeight()
+                        self.draggerBottom.constant = self.getMaxDraggerBottom()
                                         })
                 }
 
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         }
     
     
-func getHeight() ->  CGFloat{
+func getMaxDraggerBottom() ->  CGFloat{
     if #available(iOS 11.0, *) {
         let guide = view.safeAreaLayoutGuide
             return -(guide.layoutFrame.height - self.headerImgView.frame.height) + 100
