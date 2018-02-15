@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         }
     }
     var lastLocation: CGFloat = 0
+    var oldContentOffset = CGPoint.zero
     var draggerBottomConstant:CGFloat = 0{
         didSet{
          draggerBottom.constant = draggerBottomConstant
@@ -55,6 +56,8 @@ class ViewController: UIViewController {
         headerImgView.round(withBorder: true)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.alwaysBounceVertical = false
+        tableView.bounces = false
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -80,6 +83,7 @@ class ViewController: UIViewController {
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         lastLocation = draggerBottom.constant
     }
 
@@ -87,36 +91,55 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let delta =  scrollView.contentOffset.y - oldContentOffset.y
+        if (delta < 0 && scrollView.contentOffset.y < 1){
+            tableView.isUserInteractionEnabled = false
+          //  panAction(scrollView.panGestureRecognizer)
+        }
+        oldContentOffset = scrollView.contentOffset
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+        -> Bool {
+            return true
+    }
+    
+    
     @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         let velocity = sender.velocity(in: view)
         draggerBottomConstant = lastLocation + translation.y
         draggerView.alpha =  (getMaxDraggerBottom() - draggerBottom.constant) / getMaxDraggerBottom()
-        
-
         if sender.state == UIGestureRecognizerState.began {
             
         } else if sender.state == UIGestureRecognizerState.changed {
             
         } else if sender.state == UIGestureRecognizerState.ended {
 
-            
+            tableView.isUserInteractionEnabled = true
             if velocity.y > 0 {
-                UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                    self.draggerBottomConstant = 0
-                    self.draggerView.alpha = 1
-                })
+                moveToBottom()
             } else {
-                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.draggerBottomConstant = self.getMaxDraggerBottom()
-                        self.draggerView.alpha = 0
-                                        })
+                moveToTop()
                 }
 
             }
         }
     
+    func moveToBottom(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.draggerBottomConstant = 0
+            self.draggerView.alpha = 1
+        })
+    }
+    func moveToTop(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.draggerBottomConstant = self.getMaxDraggerBottom()
+            self.draggerView.alpha = 0
+        })
+    }
     
 func getMaxDraggerBottom() ->  CGFloat{
     if #available(iOS 11.0, *) {
