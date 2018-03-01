@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1189C2F02035B36A00B0D47B /* wscTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */; };
+		1189C2F22035B40600B0D47B /* wscTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189C2F12035B40600B0D47B /* wscTableView.swift */; };
 		11D0347E2022F52C006194F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0347D2022F52C006194F8 /* AppDelegate.swift */; };
 		11D034802022F52C006194F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0347F2022F52C006194F8 /* ViewController.swift */; };
 		11D034832022F52C006194F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D034812022F52C006194F8 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wscTableViewController.swift; sourceTree = "<group>"; };
+		1189C2F12035B40600B0D47B /* wscTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wscTableView.swift; sourceTree = "<group>"; };
 		11D0347A2022F52C006194F8 /* whatappstatusclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatappstatusclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D0347D2022F52C006194F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D0347F2022F52C006194F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			children = (
 				11D0347D2022F52C006194F8 /* AppDelegate.swift */,
 				11D0347F2022F52C006194F8 /* ViewController.swift */,
+				1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */,
+				1189C2F12035B40600B0D47B /* wscTableView.swift */,
 				11DA2BE820331E8A0066DC27 /* ViewControllerTableExtension.swift */,
 				11DA2BE620331D140066DC27 /* HeaderTableViewCell.swift */,
 				11D034812022F52C006194F8 /* Main.storyboard */,
@@ -275,8 +281,10 @@
 			files = (
 				11D034802022F52C006194F8 /* ViewController.swift in Sources */,
 				11DA2BE720331D140066DC27 /* HeaderTableViewCell.swift in Sources */,
+				1189C2F02035B36A00B0D47B /* wscTableViewController.swift in Sources */,
 				11DA2BE920331E8A0066DC27 /* ViewControllerTableExtension.swift in Sources */,
 				11D0347E2022F52C006194F8 /* AppDelegate.swift in Sources */,
+				1189C2F22035B40600B0D47B /* wscTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

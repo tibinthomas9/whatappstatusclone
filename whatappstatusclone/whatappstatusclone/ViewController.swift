@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var draggerDetail: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentHeader: UIView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: wscTableView!
     @IBOutlet weak var draggerBottom: NSLayoutConstraint!
     @IBOutlet weak var heightTable: NSLayoutConstraint!
     var viewCount:Int = 0{
@@ -56,8 +56,8 @@ class ViewController: UIViewController {
         headerImgView.round(withBorder: true)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.alwaysBounceVertical = false
-        tableView.bounces = false
+        //tableView.alwaysBounceVertical = false
+       // tableView.bounces = false
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -95,16 +95,16 @@ class ViewController: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let delta =  scrollView.contentOffset.y - oldContentOffset.y
         if (delta < 0 && scrollView.contentOffset.y < 1){
-            tableView.isUserInteractionEnabled = false
+            //tableView.isUserInteractionEnabled = false
           //  panAction(scrollView.panGestureRecognizer)
         }
         oldContentOffset = scrollView.contentOffset
     }
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
-        -> Bool {
-            return true
-    }
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+//                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+//        -> Bool {
+//            return true
+//    }
     
     
     @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
@@ -152,6 +152,7 @@ func getMaxDraggerBottom() ->  CGFloat{
     }
     
 }
+    
 }
 //MARK:- Helpers
 extension UIView{
@@ -163,6 +164,31 @@ extension UIView{
             layer.borderColor = UIColor.black.cgColor
         }
     }
-    
+ 
+}
+extension wscTableView{
+//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//        if (self.contentOffset.y < 1 && self.panGestureRecognizer.velocity(in: self.superview).y > 0){
+//          return false
+//        }
+//        return true
+//    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//        if (self.contentOffset.y < 1 && self.panGestureRecognizer.velocity(in: self.superview).y > 0){
+//            self.superview?.superview?.touchesBegan(touches, with: event)
+//        }
+//        else{
+//            //self.next?.touchesBegan(touches, with: event)
+//           // self.superview?.touchesBegan(touches, with: event)
+//        }
+//
+//    }
+//    override func touchesShouldBegin(_ touches: Set<UITouch>, with event: UIEvent?, in view: UIView) -> Bool {
+//        return true
+//    }
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesMoved(touches, with: event)
+//    }
 }
 
