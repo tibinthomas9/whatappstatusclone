@@ -9,7 +9,7 @@
 import UIKit
 
 class wscTableView: UITableView {
-
+    var direction :Direction = .no
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

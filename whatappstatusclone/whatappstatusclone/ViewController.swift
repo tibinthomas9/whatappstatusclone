@@ -7,7 +7,11 @@
 //
 
 import UIKit
-
+enum Direction {
+    case up
+    case down
+    case no
+}
 class ViewController: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var headerImgView: UIImageView!
@@ -31,6 +35,7 @@ class ViewController: UIViewController {
     var draggerBottomConstant:CGFloat = 0{
         didSet{
          draggerBottom.constant = draggerBottomConstant
+            self.view.layoutIfNeeded()
             if   draggerBottomConstant < -39{
                 if (contentView.alpha != 1){
                 UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
@@ -83,7 +88,7 @@ class ViewController: UIViewController {
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+        //super.touchesBegan(touches, with: event)
         lastLocation = draggerBottom.constant
     }
 
@@ -92,14 +97,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let delta =  scrollView.contentOffset.y - oldContentOffset.y
-        if (delta < 0 && scrollView.contentOffset.y < 1){
-            //tableView.isUserInteractionEnabled = false
-          //  panAction(scrollView.panGestureRecognizer)
-        }
-        oldContentOffset = scrollView.contentOffset
-    }
+    
 //    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
 //                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
 //        -> Bool {
@@ -129,15 +127,17 @@ class ViewController: UIViewController {
         }
     
     func moveToBottom(){
-        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.draggerBottomConstant = 0
             self.draggerView.alpha = 1
+            self.view.layoutIfNeeded()
         })
     }
     func moveToTop(){
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.draggerBottomConstant = self.getMaxDraggerBottom()
             self.draggerView.alpha = 0
+            self.view.layoutIfNeeded()
         })
     }
     
@@ -167,28 +167,63 @@ extension UIView{
  
 }
 extension wscTableView{
-//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//        if (self.contentOffset.y < 1 && self.panGestureRecognizer.velocity(in: self.superview).y > 0){
-//          return false
-//        }
-//        return true
-//    }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//        if (self.contentOffset.y < 1 && self.panGestureRecognizer.velocity(in: self.superview).y > 0){
-//            self.superview?.superview?.touchesBegan(touches, with: event)
-//        }
-//        else{
-//            //self.next?.touchesBegan(touches, with: event)
-//           // self.superview?.touchesBegan(touches, with: event)
-//        }
-//
-//    }
-//    override func touchesShouldBegin(_ touches: Set<UITouch>, with event: UIEvent?, in view: UIView) -> Bool {
-//        return true
-//    }
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesMoved(touches, with: event)
-//    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if (self.contentOffset.y < 1 && self.panGestureRecognizer.velocity(in: self.superview).y > 0){
+          return false
+        }
+        return super.point(inside: point, with: event)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        if (self.contentOffset.y < 1  && self.direction != .up){
+            self.superview?.superview?.touchesBegan(touches, with: event)
+        }
+        else{
+            self.canCancelContentTouches = true
+            self.touchesCancelled(touches, with: event)
+           // self.delaysContentTouches = true
+            self.isScrollEnabled = true
+            //self.next?.touchesBegan(touches, with: event)
+        }
+    //    super.touchesBegan(touches, with: event)
+    }
+    override func touchesShouldBegin(_ touches: Set<UITouch>, with event: UIEvent?, in view: UIView) -> Bool {
+        
+            return true
+        
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        if let touch = touches.first{
+            if (touch.location(in: self).y - touch.previousLocation(in: self).y > 0) {
+                self.direction = .down
+                
+            } else {
+                self.direction = .up
+            }
+            if (self.contentOffset.y < 1  && self.direction != .up){
+                self.touchesCancelled(touches, with: event)
+                self.superview?.superview?.touchesBegan(touches, with: event)
+            }
+            else{
+               // self.delaysContentTouches = true
+                self.isScrollEnabled = true
+                //self.next?.touchesBegan(touches, with: event)
+                // self.touchesBegan(touches, with: event)
+            }
+
+        }
+    }
+    override func touchesShouldCancel(in view: UIView) -> Bool {
+        return super.touchesShouldCancel(in: view)
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        //self.delaysContentTouches = false
+    }
 }
 
