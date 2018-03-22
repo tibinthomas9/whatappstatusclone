@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = "Tibin"
+        name.text = "Toast"
         details.text = "ended"
         headerImgView.image = UIImage(named: "whatsappbomb")
         headerImgView.round(withBorder: true)
@@ -68,6 +68,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     updateTable()
+    self.showToast(message: "Hai", size: nil)
     }
     func updateTable(){
         viewCount = 50
@@ -87,6 +88,7 @@ class ViewController: UIViewController {
 
         
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //super.touchesBegan(touches, with: event)
         lastLocation = draggerBottom.constant
@@ -131,14 +133,18 @@ class ViewController: UIViewController {
             self.draggerBottomConstant = 0
             self.draggerView.alpha = 1
             self.view.layoutIfNeeded()
-        })
+        }){ (completed) in
+            self.showToast(message: "DOWN", position: .bottomAttached, size: nil)
+        }
     }
     func moveToTop(){
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.draggerBottomConstant = self.getMaxDraggerBottom()
             self.draggerView.alpha = 0
             self.view.layoutIfNeeded()
-        })
+        }) { (completed) in
+            self.showToast(message: "UP", position: .topAttached, size: nil)
+        }
     }
     
 func getMaxDraggerBottom() ->  CGFloat{

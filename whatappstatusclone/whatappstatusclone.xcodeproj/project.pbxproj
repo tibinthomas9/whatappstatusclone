@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1189C2F02035B36A00B0D47B /* wscTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */; };
 		1189C2F22035B40600B0D47B /* wscTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189C2F12035B40600B0D47B /* wscTableView.swift */; };
+		1198F3B72063852A00930377 /* toastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198F3B62063852A00930377 /* toastView.swift */; };
 		11D0347E2022F52C006194F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0347D2022F52C006194F8 /* AppDelegate.swift */; };
 		11D034802022F52C006194F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0347F2022F52C006194F8 /* ViewController.swift */; };
 		11D034832022F52C006194F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D034812022F52C006194F8 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wscTableViewController.swift; sourceTree = "<group>"; };
 		1189C2F12035B40600B0D47B /* wscTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wscTableView.swift; sourceTree = "<group>"; };
+		1198F3B62063852A00930377 /* toastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toastView.swift; sourceTree = "<group>"; };
 		11D0347A2022F52C006194F8 /* whatappstatusclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatappstatusclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D0347D2022F52C006194F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D0347F2022F52C006194F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1198F3B5206384CA00930377 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1198F3B62063852A00930377 /* toastView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		11D034712022F52B006194F8 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		11D0347C2022F52C006194F8 /* whatappstatusclone */ = {
 			isa = PBXGroup;
 			children = (
+				1198F3B5206384CA00930377 /* Helpers */,
 				11D0347D2022F52C006194F8 /* AppDelegate.swift */,
 				11D0347F2022F52C006194F8 /* ViewController.swift */,
 				1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */,
@@ -279,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1198F3B72063852A00930377 /* toastView.swift in Sources */,
 				11D034802022F52C006194F8 /* ViewController.swift in Sources */,
 				11DA2BE720331D140066DC27 /* HeaderTableViewCell.swift in Sources */,
 				1189C2F02035B36A00B0D47B /* wscTableViewController.swift in Sources */,
@@ -451,11 +463,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3XGB2GRVVS;
+				DEVELOPMENT_TEAM = MTVHX6F533;
 				INFOPLIST_FILE = whatappstatusclone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tibinT9.whatappstatusclone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tibin9.whatappstatusclone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,11 +479,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3XGB2GRVVS;
+				DEVELOPMENT_TEAM = MTVHX6F533;
 				INFOPLIST_FILE = whatappstatusclone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tibinT9.whatappstatusclone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tibin9.whatappstatusclone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
