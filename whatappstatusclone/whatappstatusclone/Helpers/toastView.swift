@@ -18,7 +18,7 @@ extension UIViewController{
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : String ,color : UIColor = UIColor.black,textColor : UIColor = UIColor.white, position: ToastPosition = .any,size : CGSize?){
+    func showToast(message : String ,color : UIColor = UIColor.black,textColor : UIColor = UIColor.white, position: ToastPosition = .any,size : CGSize? = nil){
         //insert the toastView
         let toastView = UILabel()
         toastView.translatesAutoresizingMaskIntoConstraints = false
