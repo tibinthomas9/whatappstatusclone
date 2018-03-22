@@ -18,7 +18,7 @@ extension UIViewController{
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : String , position: ToastPosition = .any,size : CGSize?){
+    func showToast(message : String ,color : UIColor = UIColor.black,textColor : UIColor = UIColor.white, position: ToastPosition = .any,size : CGSize?){
         //insert the toastView
         let toastView = UILabel()
         toastView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,8 +28,8 @@ extension UIViewController{
         toastView.adjustsFontSizeToFitWidth = true
         toastView.text = message
         toastView.textAlignment = .center
-        toastView.textColor = UIColor.gray
-        toastView.backgroundColor = UIColor.black
+        toastView.textColor = textColor
+        toastView.backgroundColor = color
         view.addSubview(toastView)
         view.bringSubview(toFront: toastView)
         //setting constraints
@@ -60,11 +60,13 @@ extension UIViewController{
             toastView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         }
         self.view.layoutIfNeeded()
+        //animate increase height
         heightConstraint.constant = size?.height ?? 20
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
             self.view.layoutIfNeeded()
         }) { (completed) in
-            UIView.animate(withDuration: 1, delay: 1, options:.transitionCurlUp, animations: {
+            //animate dimming after 1 second
+            UIView.animate(withDuration: 1, delay: 1, options:.curveEaseInOut, animations: {
                 toastView.alpha = 0
                 }, completion: { (completed) in
                     toastView.removeFromSuperview()
