@@ -12,9 +12,7 @@ import UIKit
 extension UIViewController{
     public enum ToastPosition : Int {
         case any
-        case bottom // The bar is at the bottom of its local context, and directional decoration draws accordingly (e.g., shadow above the bar).
         case bottomAttached // The bar is at the bottom of its local context, and directional decoration draws accordingly (e.g., shadow above the bar).
-        case top // The bar is at the top of its local context, and directional decoration draws accordingly (e.g., shadow below the bar)
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
@@ -36,9 +34,9 @@ extension UIViewController{
         //setting constraints
         
         // width and height
-        let heightConstraint = toastView.heightAnchor.constraint(greaterThanOrEqualToConstant:  0)
         toastView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (position == .any ) ? view.bounds.width/7: 0 ).isActive = true
         toastView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: position == .any ?  -view.bounds.width/7 : 0).isActive = true
+        var heightConstraint = toastView.heightAnchor.constraint(equalToConstant: 0)
         heightConstraint.isActive = true
         
         // position the toast
@@ -57,12 +55,14 @@ extension UIViewController{
             else{
                 toastView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  position == .bottomAttached ? 0: -view.bounds.height/7).isActive = true
             }
-          //  toastView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
         }
         self.view.layoutIfNeeded()
+        heightConstraint.isActive = false
+        heightConstraint = toastView.heightAnchor.constraint(greaterThanOrEqualToConstant:  0)
+        heightConstraint.isActive = true
         //animate increase height
-      //  heightConstraint.constant = size?.height ?? 20
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }) { (completed) in
             //animate dimming after 1 second
