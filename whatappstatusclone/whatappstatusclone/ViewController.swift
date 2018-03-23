@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     updateTable()
-        self.showToast(message: NSAttributedString(string: "Hai"), size: nil)
+        self.showToast(message: NSAttributedString(string: "\n\nHai\n\n"), size: nil)
     }
     func updateTable(){
         viewCount = 50

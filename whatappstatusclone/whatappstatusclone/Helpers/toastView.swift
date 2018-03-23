@@ -29,6 +29,8 @@ extension UIViewController{
         toastView.textAlignment = .center
         toastView.textColor = textColor
         toastView.backgroundColor = color
+        toastView.layer.masksToBounds = true
+        
         view.addSubview(toastView)
         view.bringSubview(toFront: toastView)
         //setting constraints
@@ -57,13 +59,19 @@ extension UIViewController{
             }
 
         }
+        
         self.view.layoutIfNeeded()
+        
         heightConstraint.isActive = false
         heightConstraint = toastView.heightAnchor.constraint(greaterThanOrEqualToConstant:  0)
         heightConstraint.isActive = true
+        
         //animate increase height
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
+            if (position == .any){
+                toastView.layer.cornerRadius = toastView.bounds.height/3
+            }
         }) { (completed) in
             //animate dimming after 1 second
             UIView.animate(withDuration: 1, delay: 1, options:.curveEaseInOut, animations: {
