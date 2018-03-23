@@ -33,12 +33,14 @@ extension UIViewController{
         view.addSubview(toastView)
         view.bringSubview(toFront: toastView)
         //setting constraints
-        let widthConstraint = toastView.widthAnchor.constraint(equalToConstant: 0)
+       // let widthConstraint = toastView.widthAnchor.constraint(equalToConstant: 0)
         let heightConstraint = toastView.heightAnchor.constraint(equalToConstant:  0)
-        widthConstraint.constant = size?.width ?? view.bounds.width
-        toastView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+       // widthConstraint.constant = size?.width ?? view.bounds.width
+        toastView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        toastView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        //toastView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         // width and height
-        widthConstraint.isActive = true
+       // widthConstraint.isActive = true
         heightConstraint.isActive = true
         // position the toast
         switch position {
