@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     updateTable()
-    self.showToast(message: "Hai", size: nil)
+        self.showToast(message: NSAttributedString(string: "Hai"), size: nil)
     }
     func updateTable(){
         viewCount = 50
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
             self.draggerView.alpha = 1
             self.view.layoutIfNeeded()
         }){ (completed) in
-            self.showToast(message: "DOWN", position: .bottomAttached, size: nil)
+            self.showToast(message: NSAttributedString(string: "DOWN"), position: .bottomAttached, size: nil)
         }
     }
     func moveToTop(){
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
             self.draggerView.alpha = 0
             self.view.layoutIfNeeded()
         }) { (completed) in
-            self.showToast(message: "UP", position: .topAttached, size: nil)
+            self.showToast(message: NSAttributedString(string: "\nUP\n") , position: .topAttached, size: nil)
         }
     }
     
