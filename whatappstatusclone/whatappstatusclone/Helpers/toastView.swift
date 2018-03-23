@@ -35,7 +35,7 @@ extension UIViewController{
         container.layer.masksToBounds = false
         container.layer.shadowOpacity = 0.5
         container.layer.shadowColor = UIColor.black.cgColor
-        container.layer.shadowRadius = 6
+        container.layer.shadowRadius = 8
         container.layer.shadowOffset = CGSize(width: 0, height: 0)
 
         view.addSubview(container)
