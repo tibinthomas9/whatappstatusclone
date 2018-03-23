@@ -11,19 +11,19 @@ import UIKit
 
 extension UIViewController{
     public enum ToastPosition : Int {
-        case any
+        case `default`
         case bottomAttached // The bar is at the bottom of its local context, and directional decoration draws accordingly (e.g., shadow above the bar).
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.white, position: ToastPosition = .any,size : CGSize? = nil){
+    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.white, position: ToastPosition = .default,size : CGSize? = nil){
         //insert the toastView
         let container = UIView()
         let toastView = UILabel()
         container.translatesAutoresizingMaskIntoConstraints = false
         toastView.translatesAutoresizingMaskIntoConstraints = false
         toastView.alpha = 0.8
-        toastView.font = UIFont.systemFont(ofSize: 12)
+        toastView.font = UIFont.systemFont(ofSize: 13)
         toastView.minimumScaleFactor = 0.5
         toastView.adjustsFontSizeToFitWidth = true
         toastView.numberOfLines = 0
@@ -44,8 +44,8 @@ extension UIViewController{
         //setting constraints
         
         // width and height
-        container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (position == .any ) ? view.bounds.width/7: 0 ).isActive = true
-        container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: position == .any ?  -view.bounds.width/7 : 0).isActive = true
+        container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (position == .default ) ? view.bounds.width/7: 0 ).isActive = true
+        container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: position == .default ?  -view.bounds.width/7 : 0).isActive = true
         var heightConstraint = container.heightAnchor.constraint(equalToConstant: 0)
         heightConstraint.isActive = true
         //constraining toastview within container
@@ -83,7 +83,7 @@ extension UIViewController{
         //animate increase height
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
-            if (position == .any){
+            if (position == .default){
                 toastView.layer.cornerRadius = toastView.bounds.height/3
             }
         }) { (completed) in

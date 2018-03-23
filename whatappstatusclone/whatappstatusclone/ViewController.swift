@@ -143,7 +143,7 @@ class ViewController: UIViewController {
             self.draggerView.alpha = 0
             self.view.layoutIfNeeded()
         }) { (completed) in
-            self.showToast(message: NSAttributedString(string: "\nUP\n") , position: .any, size: nil)
+            self.showToast(message: NSAttributedString(string: "\nUP\n") , position: .default, size: nil)
             self.showToast(message: NSAttributedString(string: "\nUP\n") , color : UIColor.black, position: .topAttached)
         }
     }
