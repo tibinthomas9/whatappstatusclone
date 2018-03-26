@@ -16,7 +16,7 @@ extension UIViewController{
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.darkGray, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false , withBlur : Bool = false , blurStyle : UIBlurEffectStyle = .light){
+    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.darkGray, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false , withBlur : Bool = false , blurStyle : UIBlurEffectStyle = .light , isPersistent : Bool = false){
         //insert the toastView
         let container = UIView()
         let toastView = UILabel()
@@ -107,9 +107,9 @@ extension UIViewController{
             }
             //animate dimming after 1 second
             UIView.animate(withDuration: 1, delay: withShake ? 1.5: 1, options:.curveEaseInOut, animations: {
-                container.alpha = 0
+                container.alpha = isPersistent ? 1 : 0
                 }, completion: { (completed) in
-                    container.removeFromSuperview()
+                    isPersistent ? nil : container.removeFromSuperview()
                 })
 
         }
