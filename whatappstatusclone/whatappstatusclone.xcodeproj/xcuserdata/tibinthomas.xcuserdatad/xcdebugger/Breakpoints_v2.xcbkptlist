@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.297721"
+            timestampString = "543756477.623068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.297846"
+            timestampString = "543756477.623209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.297945"
+            timestampString = "543756477.623316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.29804"
+            timestampString = "543756477.623412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.298133"
+            timestampString = "543756477.623518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.298287"
+            timestampString = "543756477.6236891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -120,7 +120,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.2983789"
+            timestampString = "543756477.623796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -150,7 +150,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.298583"
+            timestampString = "543756477.6239311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
@@ -166,7 +166,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.2986929"
+            timestampString = "543756477.624002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
@@ -182,7 +182,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.298797"
+            timestampString = "543756477.624071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "215"
@@ -194,58 +194,42 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.298894"
+            timestampString = "543756477.624179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
             landmarkName = "moveToBottom()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.298988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "moveToTop()"
-            landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "whatappstatusclone.ViewController.moveToBottom() -&gt; ()"
                   moduleName = "whatappstatusclone"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tibinthomas/Documents/Tibin%20Thomas/Projects/whatappstatusclone/whatappstatusclone/whatappstatusclone/ViewController.swift"
-                  timestampString = "543400240.981041"
+                  timestampString = "543754629.497068"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"
                   endingLineNumber = "132"
-                  offsetFromSymbolStart = "14">
+                  offsetFromSymbolStart = "17">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; () in whatappstatusclone.ViewController.moveToBottom() -&gt; ()"
                   moduleName = "whatappstatusclone"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tibinthomas/Documents/Tibin%20Thomas/Projects/whatappstatusclone/whatappstatusclone/whatappstatusclone/ViewController.swift"
-                  timestampString = "543400240.984463"
+                  timestampString = "543754629.499125"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "133"
@@ -262,7 +246,55 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.299091"
+            timestampString = "543756477.624283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "moveToTop()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "whatappstatusclone.ViewController.moveToTop() -&gt; ()"
+                  moduleName = "whatappstatusclone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tibinthomas/Documents/Tibin%20Thomas/Projects/whatappstatusclone/whatappstatusclone/whatappstatusclone/ViewController.swift"
+                  timestampString = "543754629.503819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in whatappstatusclone.ViewController.moveToTop() -&gt; ()"
+                  moduleName = "whatappstatusclone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tibinthomas/Documents/Tibin%20Thomas/Projects/whatappstatusclone/whatappstatusclone/whatappstatusclone/ViewController.swift"
+                  timestampString = "543754629.50588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "whatappstatusclone/ViewController.swift"
+            timestampString = "543756477.624374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
@@ -278,7 +310,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.2991821"
+            timestampString = "543756477.624464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -294,7 +326,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/ViewController.swift"
-            timestampString = "543753657.299276"
+            timestampString = "543756477.624554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -418,17 +450,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "whatappstatusclone/Helpers/toastView.swift"
-            timestampString = "543753657.299722"
+            timestampString = "543756477.624981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "showToast(message:color:textColor:position:size:withShake:)"
+            landmarkName = "showToast(message:color:textColor:position:size:withShake:withBlur:blurStyle:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "whatappstatusclone/Helpers/toastView.swift"
+            timestampString = "543756477.6256911"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "showToast(message:color:textColor:position:size:withShake:withBlur:blurStyle:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in (extension in whatappstatusclone):__ObjC.UIViewController.showToast(message: __ObjC.NSAttributedString, color: __ObjC.UIColor, textColor: __ObjC.UIColor, position: (extension in whatappstatusclone):__ObjC.UIViewController.ToastPosition, size: Swift.Optional&lt;__C.CGSize&gt;, withShake: Swift.Bool) -&gt; ()"
+                  moduleName = "whatappstatusclone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tibinthomas/Documents/Tibin%20Thomas/Projects/whatappstatusclone/whatappstatusclone/whatappstatusclone/Helpers/toastView.swift"
+                  timestampString = "543754663.8537821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "879">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #2 (Swift.Bool) -&gt; () in (extension in whatappstatusclone):__ObjC.UIViewController.showToast(message: __ObjC.NSAttributedString, color: __ObjC.UIColor, textColor: __ObjC.UIColor, position: (extension in whatappstatusclone):__ObjC.UIViewController.ToastPosition, size: Swift.Optional&lt;__C.CGSize&gt;, withShake: Swift.Bool) -&gt; ()"
+                  moduleName = "whatappstatusclone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tibinthomas/Documents/Tibin%20Thomas/Projects/whatappstatusclone/whatappstatusclone/whatappstatusclone/Helpers/toastView.swift"
+                  timestampString = "543754663.856945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -16,7 +16,7 @@ extension UIViewController{
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.white, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false){
+    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.darkGray, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false , withBlur : Bool = false , blurStyle : UIBlurEffectStyle = .light){
         //insert the toastView
         let container = UIView()
         let toastView = UILabel()
@@ -30,15 +30,22 @@ extension UIViewController{
         toastView.attributedText = message
         toastView.textAlignment = .center
         toastView.textColor = textColor
-        container.backgroundColor = color
+        container.backgroundColor = withBlur ? UIColor.clear : color
         toastView.layer.masksToBounds = true
         container.layer.masksToBounds = false
         container.layer.shadowOpacity = 0.5
         container.layer.shadowColor = UIColor.black.cgColor
         container.layer.shadowRadius = 8
         container.layer.shadowOffset = CGSize(width: 0, height: 0)
+        container.clipsToBounds = true
 
         view.addSubview(container)
+        if withBlur{
+        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+        blurEffectView.frame = container.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        container.addSubview(blurEffectView)
+        }
         container.addSubview(toastView)
         view.bringSubview(toFront: container)
         //setting constraints
