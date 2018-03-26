@@ -53,8 +53,6 @@ extension UIViewController{
         
         
         
-        
-        
         //setting constraints
         // width and height
         container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (position == .default ) ? view.bounds.width/7: 0 ).isActive = true
@@ -86,16 +84,18 @@ extension UIViewController{
             }
 
         }
-        
         self.view.layoutIfNeeded()
+        
         if isPersistent{
-            let button = UIButton(type: .detailDisclosure)
-            //button.frame = container.bounds
+            let button = UIButton(type: .custom)
             button.frame = CGRect(x: container.bounds.width - 10, y: 0, width: 10, height: container.bounds.height)
             button.autoresizingMask = [.flexibleWidth,.flexibleHeight]
             container.addSubview(button)
+            button.titleLabel?.text = "X"
+            button.titleLabel?.textColor = UIColor.white
+            button.titleLabel?.textAlignment = .left
+            button.backgroundColor = UIColor.black
             button.tag = container.tag
-            //button.addTarget(self, action: #selector(closeToast) , for: .touchUpInside)
             button.addTarget(nil, action: #selector(closeToast(sender:)), for: .touchUpInside)
         }
         
@@ -132,7 +132,7 @@ extension UIViewController{
     }
     
     @objc func closeToast(sender : UIButton){
-        let tag = sender.tag 
+        let tag = sender.tag
         let tview = view.viewWithTag(tag)
         tview?.removeFromSuperview()
         
