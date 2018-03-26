@@ -89,7 +89,7 @@ extension UIViewController{
         if isPersistent{
             let button = UIButton(type: .custom)
             button.frame = CGRect(x: container.bounds.width - 10, y: 0, width: 10, height: container.bounds.height)
-            button.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+            button.autoresizingMask = [.flexibleHeight,.flexibleBottomMargin,.flexibleTopMargin,.flexibleLeftMargin]
             container.addSubview(button)
             button.titleLabel?.text = "X"
             button.titleLabel?.textColor = UIColor.white
