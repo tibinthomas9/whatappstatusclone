@@ -94,7 +94,7 @@ extension UIViewController{
             button.frame = CGRect(x: container.bounds.width - 10, y: 0, width: 10, height: container.bounds.height)
             button.autoresizingMask = [.flexibleWidth,.flexibleHeight]
             container.addSubview(button)
-            button.tag = container.tag * 4
+            button.tag = container.tag
             //button.addTarget(self, action: #selector(closeToast) , for: .touchUpInside)
             button.addTarget(nil, action: #selector(closeToast(sender:)), for: .touchUpInside)
         }
@@ -132,7 +132,7 @@ extension UIViewController{
     }
     
     @objc func closeToast(sender : UIButton){
-        let tag = sender.tag / 4
+        let tag = sender.tag 
         let tview = view.viewWithTag(tag)
         tview?.removeFromSuperview()
         
