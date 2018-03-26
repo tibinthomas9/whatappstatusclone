@@ -16,7 +16,7 @@ extension UIViewController{
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.white, position: ToastPosition = .default,size : CGSize? = nil){
+    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.white, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false){
         //insert the toastView
         let container = UIView()
         let toastView = UILabel()
@@ -30,7 +30,7 @@ extension UIViewController{
         toastView.attributedText = message
         toastView.textAlignment = .center
         toastView.textColor = textColor
-        toastView.backgroundColor = color
+        container.backgroundColor = color
         toastView.layer.masksToBounds = true
         container.layer.masksToBounds = false
         container.layer.shadowOpacity = 0.5
@@ -84,12 +84,23 @@ extension UIViewController{
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
             if (position == .default){
-                toastView.layer.cornerRadius = toastView.bounds.height/3
+                container.layer.cornerRadius = container.bounds.height/3
             }
         }) { (completed) in
+             var xValue = 10
+            //perform shake
+            if withShake{
+                UIView.animate(withDuration: 0.10, delay: 0, options: [.repeat,.autoreverse], animations: {
+                    UIView.setAnimationRepeatCount(4)
+                    toastView.transform = CGAffineTransform(translationX: CGFloat(xValue), y: 0)
+                    xValue *= -1
+                }, completion: { (finished) in
+                    toastView.transform = CGAffineTransform(translationX: 0, y: 0)
+                })
+            }
             //animate dimming after 1 second
-            UIView.animate(withDuration: 1, delay: 1, options:.curveEaseInOut, animations: {
-                toastView.alpha = 0
+            UIView.animate(withDuration: 1, delay: withShake ? 1.5: 1, options:.curveEaseInOut, animations: {
+                container.alpha = 0
                 }, completion: { (completed) in
                     container.removeFromSuperview()
                 })
