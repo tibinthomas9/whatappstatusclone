@@ -16,9 +16,11 @@ extension UIViewController{
         case topAttached // The bar is at the top of the screen (as well as its local context), and its background extends upward—currently only enough for the status bar.
     }
     
-    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.darkGray, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false , withBlur : Bool = false , blurStyle : UIBlurEffectStyle = .light , isPersistent : Bool = false){
+    func showToast(message : NSAttributedString ,color : UIColor = UIColor.lightGray,textColor : UIColor = UIColor.darkGray, position: ToastPosition = .default,size : CGSize? = nil, withShake: Bool = false , withBlur : Bool = false , blurStyle : UIBlurEffectStyle = .light , isPersistent : Bool = true){
         //insert the toastView
         let container = UIView()
+        let rando = Int(arc4random())
+        container.tag = rando
         let toastView = UILabel()
         container.translatesAutoresizingMaskIntoConstraints = false
         toastView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,8 +50,12 @@ extension UIViewController{
         }
         container.addSubview(toastView)
         view.bringSubview(toFront: container)
-        //setting constraints
         
+        
+        
+        
+        
+        //setting constraints
         // width and height
         container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (position == .default ) ? view.bounds.width/7: 0 ).isActive = true
         container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: position == .default ?  -view.bounds.width/7 : 0).isActive = true
@@ -82,6 +88,16 @@ extension UIViewController{
         }
         
         self.view.layoutIfNeeded()
+        if isPersistent{
+            let button = UIButton(type: .detailDisclosure)
+            //button.frame = container.bounds
+            button.frame = CGRect(x: container.bounds.width - 10, y: 0, width: 10, height: container.bounds.height)
+            button.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+            container.addSubview(button)
+            button.tag = container.tag * 4
+            //button.addTarget(self, action: #selector(closeToast) , for: .touchUpInside)
+            button.addTarget(nil, action: #selector(closeToast(sender:)), for: .touchUpInside)
+        }
         
         heightConstraint.isActive = false
         heightConstraint = container.heightAnchor.constraint(greaterThanOrEqualToConstant:  0)
@@ -113,6 +129,13 @@ extension UIViewController{
                 })
 
         }
+    }
+    
+    @objc func closeToast(sender : UIButton){
+        let tag = sender.tag / 4
+        let tview = view.viewWithTag(tag)
+        tview?.removeFromSuperview()
+        
     }
     
 }
