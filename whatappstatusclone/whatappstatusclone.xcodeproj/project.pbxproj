@@ -115,10 +115,11 @@
 		11D0347C2022F52C006194F8 /* whatappstatusclone */ = {
 			isa = PBXGroup;
 			children = (
+				C209D5FF20A1B57600D5CBEA /* Model */,
+				C209D5FE20A1B56900D5CBEA /* View */,
 				1198F3B5206384CA00930377 /* Helpers */,
 				11D0347D2022F52C006194F8 /* AppDelegate.swift */,
-				11D0347F2022F52C006194F8 /* ViewController.swift */,
-				1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */,
+				C209D5FD20A1B54200D5CBEA /* Controller */,
 				1189C2F12035B40600B0D47B /* wscTableView.swift */,
 				11DA2BE820331E8A0066DC27 /* ViewControllerTableExtension.swift */,
 				11DA2BE620331D140066DC27 /* HeaderTableViewCell.swift */,
@@ -154,6 +155,29 @@
 			children = (
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C209D5FD20A1B54200D5CBEA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11D0347F2022F52C006194F8 /* ViewController.swift */,
+				1189C2EF2035B36A00B0D47B /* wscTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C209D5FE20A1B56900D5CBEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C209D5FF20A1B57600D5CBEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
