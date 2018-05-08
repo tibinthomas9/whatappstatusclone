@@ -144,7 +144,7 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }) { (completed) in
             self.showToast(message: NSAttributedString(string: "\nUP\n") , position: .default, size: nil)
-            self.showToast(message: NSAttributedString(string: "\nUP\n") , color : UIColor.black, position: .topAttached)
+            self.showToast(message: NSAttributedString(string: "\nUP\n") , color : UIColor.red, position: .topAttached)
         }
     }
     
@@ -221,16 +221,6 @@ extension wscTableView{
             }
 
         }
-    }
-    override func touchesShouldCancel(in view: UIView) -> Bool {
-        return super.touchesShouldCancel(in: view)
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        //self.delaysContentTouches = false
     }
 }
 
