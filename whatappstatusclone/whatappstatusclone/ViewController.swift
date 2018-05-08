@@ -144,7 +144,7 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }) { (completed) in
             self.showToast(message: NSAttributedString(string: "\nUP\n") , position: .default, size: nil)
-            self.showToast(message: NSAttributedString(string: "\nUP\n") , color : UIColor.black, position: .topAttached)
+            self.showToast(message: NSAttributedString(string: "\nUP\n") , color : UIColor.red, position: .topAttached)
         }
     }
     
