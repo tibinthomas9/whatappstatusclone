@@ -115,6 +115,7 @@
 		11D0347C2022F52C006194F8 /* whatappstatusclone */ = {
 			isa = PBXGroup;
 			children = (
+				C209D60220A1B9B900D5CBEA /* StoryBoards */,
 				C209D5FF20A1B57600D5CBEA /* Model */,
 				C209D5FE20A1B56900D5CBEA /* View */,
 				1198F3B5206384CA00930377 /* Helpers */,
@@ -123,7 +124,6 @@
 				1189C2F12035B40600B0D47B /* wscTableView.swift */,
 				11DA2BE820331E8A0066DC27 /* ViewControllerTableExtension.swift */,
 				11DA2BE620331D140066DC27 /* HeaderTableViewCell.swift */,
-				11D034812022F52C006194F8 /* Main.storyboard */,
 				11D034AD202322C6006194F8 /* ViewController */,
 				11D034842022F52C006194F8 /* Assets.xcassets */,
 				11D034862022F52C006194F8 /* LaunchScreen.storyboard */,
@@ -178,6 +178,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C209D60220A1B9B900D5CBEA /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				11D034812022F52C006194F8 /* Main.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
