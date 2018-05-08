@@ -222,15 +222,5 @@ extension wscTableView{
 
         }
     }
-    override func touchesShouldCancel(in view: UIView) -> Bool {
-        return super.touchesShouldCancel(in: view)
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        //self.delaysContentTouches = false
-    }
 }
 
